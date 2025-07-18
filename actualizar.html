@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE>Actualizar</TITLE>
+</HEAD>
+
+<BODY TEXT="white" bgcolor="#151B52" MARGINHEIGHT=40 TOPMARGIN=40 >
+<CENTER>
+<H1>pop chic</H1>
+<BR>
+<FONT COLOR="came" SIZE=5><H1> usuario </H1>
+<BR>
+
+<?php
+
+$server = "localhost";
+$usuario = "root";
+$contraseña = "";
+$bd = "popchic";
+
+$conexion = mysqli_connect($server, $usuario, $contraseña, $bd)
+or die ("Error de conexión");
+
+$IDUsuario= $_POST['IDUsuario'];
+$Clima = $_POST['Clima'];
+$Animo = $_POST['Animo'];
+$Tipodedia = $_POST['Tipodedia'];
+
+mysqli_query ($conexion, "UPDATE usuario set Clima='$Clima', Animo='$Animo', Tipodedia='$Tipodedia' where IDUsuario='$IDUsuario'")
+or die ("Error al actualizar");
+
+mysqli_close($conexion);
+
+echo "___________________________________<br><br>";
+echo "Datos actualizados correctamente <br><br>";
+echo "___________________________________<br><br>";
+
+?>
+
+<FORM ACTION="actualizacion.php">
+
+<FORM ACTION="Untitled-1.html">
+<INPUT TYPE="submit" VALUE="REGRESAR" STYLE="background-color:brown;color:white;">
+</FORM>
+</FONT></CENTER></BODY></HTML>
