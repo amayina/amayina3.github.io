@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>POP CHIC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="" class="logo">
+    <h1>POP CHIC</h1>
+    <p>Por que tu maquillaje debe ir contigo, no en tu contra</p>
+    <a href="guia.html" class="boton-guia">Guía</a>
+  </header>
+
+  <section class="video-estetico">
+  <video autoplay loop playsinline controls>
+    <source src="videos/inicio2.mp4" type="video/mp4">
+  </video>
+</section>
+
+  <section class="selector">
+
+    <h2>Selecciona las siguientes opciones</h2>
+
+   <FORM ACTION="insertar.php" METHOD="post"><BR>
+<FONT SIZE=1><LABEL> ID DEL USUARIO: </LABEL>
+<INPUT TYPE="text" NAME="IDUsuario" SIZE=5 required><BR><BR>
+
+
+    <label for="clima">🌤 Clima:</label>
+      <form action="insertar.php" method="POST">
+    <select name="Clima" size=1 required>
+      <option value="Selecciona">Selecciona</option>
+      <option value="soleado">Soleado</option>
+      <option value="lluvioso">Lluvioso</option>
+      <option value="nublado">Nublado</option>
+      <option value="caluroso">Caluroso</option>
+    </select>
+
+    <label for="animo">😊 Ánimo:</label>
+    <select name="Animo" size=1 required>
+      <option value="">Selecciona</option>
+      <option value="feliz">Feliz</option>
+      <option value="cansada">Cansada</option>
+      <option value="estresada">Estresada</option>
+      <option value="creativa">Creativa</option>
+    </select>
+
+    <label for="tipo">📅 Tipo de día:</label>
+    <select name="Tipodedia" size=1 required>
+      <option value="">Selecciona</option>
+      <option value="trabajo">Trabajo</option>
+      <option value="casual">Casual</option>
+      <option value="fiesta">Fiesta</option>
+      <option value="reunion">Reunión</option>
+    </select>
+
+<div class="acciones">
+  <form action="insertar.php" method="POST" style="display:inline;">
+    <button type="submit">Generar Look</button>
+  </form>
+
+  <form action="mostrar.php" method="GET" style="display:inline;">
+    <button type="submit">📋Mostrar</button>
+  </form>
+
+  <form action="actualizacion.php" method="GET" style="display:inline;">
+    <input type="number" name="id" placeholder="ID a editar" required>
+    <button type="submit">✏️Actualizar</button>
+  </form>
+
+  <form action="eliminar.php" method="GET" style="display:inline;">
+    <input type="number" name="id" placeholder="ID a eliminar" required>
+    <button type="submit">🗑️Eliminar</button>
+  </form>
+</div>
+
+  </section>
+
+  <section id="resultado" class="resultado oculto">
+    <h2>✨ Tu look recomendado:</h2>
+    <p id="lookTexto"></p>
+  </section>
+
+ <section class="historial">
+  <h2>Historial</h2>
+  <table id="tablaHistorial">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Clima</th>
+        <th>Ánimo</th>
+        <th>Tipo</th>
+        <th>Look</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Las filas se generan con JS -->
+    </tbody>
+  </table>
+</section>
+
+
+  <section class="galeria-looks">
+  <h2></h2>
+  <div class="contenedor-galeria">
+    <img src="img/look1.jpeg" alt="">
+    <img src="img/look2.jpeg" alt="">
+    <img src="img/look3.jpeg" alt="">
+    <img src="img/look4.jpeg" alt="">
+    <img src="img/look5.jpeg" alt="">
+    <img src="img/look6.jpeg" alt="">
+    <img src="img/look7.jpeg" alt="">
+    <img src="img/look8.jpeg" alt="">
+    <img src="img/look9.jpeg" alt="">
+    <img src="img/look10.jpeg" alt="">
+    <img src="img/look11.jpeg" alt="">
+  </div>
+</section>
+
+
+ <section class="tips-sidebar">
+    <h2>Tips</h2>
+    <p id= "tipTexto"></p>
+  </section>
+
+  <section class="comentarios">
+    <h2>💬 Comentarios de usuarisas</h2>
+    <textarea placeholder="Escribe tu experiencia..."></textarea>
+    <button>Enviar</button>
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tu Look Diario</p>
+  </footer>
+
+  <script src="class2.js"></script>
+</body>
+</html>
