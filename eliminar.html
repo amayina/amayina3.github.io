@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE>Eliminar</TITLE>
+</HEAD>
+
+<BODY TEXT="white" bgcolor="#151B52" MARGINHEIGHT=40 TOPMARGIN=40 >
+<CENTER>
+<H1>´POP CHIC"</H1><BR>
+<FONT COLOR="blue" SIZE=5><H1> usuario </H1><BR>
+
+<?php
+
+$server = "localhost";
+$usuario = "root";
+$contraseña = "";
+$bd = "popchic";
+
+$conexion = mysqli_connect($server, $usuario, $contraseña, $bd)
+or die ("Error de conexión");
+
+$IDUsuario= $_POST['IDUsuario'];
+
+mysqli_query ($conexion, "DELETE from usuario where IDUsuario='$IDUsuario'")
+or die ("Error al eliminar los datos");
+
+mysqli_close($conexion);
+
+echo "___________________________________<br><br>";
+echo "Datos eliminados correctamente <br><br>";
+echo "___________________________________<br><br>";
+
+?>
+
+<FORM ACTION="Untitled-1.html">
+<INPUT TYPE="submit" VALUE="REGRESAR" STYLE="background-color:blue;color:white;">
+</FORM>
+
+</FONT></CENTER></BODY></HTML>
