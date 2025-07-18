@@ -1,0 +1,90 @@
+function generarLook() {
+  const clima = document.getElementById("clima").value;
+  const animo = document.getElementById("animo").value;
+  const tipo = document.getElementById("tipo").value;
+  const resultado = document.getElementById("lookTexto");
+  const seccionResultado = document.getElementById("resultado");
+
+  let mensaje = "Te recomendamos: ";
+
+ 
+  if (clima === "calor") mensaje += "usa una base ligera y spray fijador. ";
+  if (clima === "frio") mensaje += "usa base hidratante y labial cremoso. ";
+  if (clima === "lluvia") mensaje += "elige productos waterproof. ";
+  if (clima === "nublado") mensaje += "usa tonos cálidos para dar vida. ";
+
+  if (animo === "cansada") mensaje += "Aplica corrector iluminador y rímel para abrir la mirada. ";
+  if (animo === "feliz") mensaje += "Usa colores vivos en los ojos o labios. ";
+  if (animo === "prisa") mensaje += "Opta por BB cream y rubor rápido. ";
+  if (animo === "creativa") mensaje += "Atrévete con delineados o sombras diferentes. ";
+
+  if (tipo === "fiesta") mensaje += "Añade un labial vibrante y sombra con brillo. ";
+  if (tipo === "trabajo") mensaje += "Maquillaje natural con acabado profesional. ";
+  if (tipo === "casual") mensaje += "Maquillaje ligero con rubor suave. ";
+  if (tipo === "reunion") mensaje += "Toques elegantes como delineado sutil. ";
+
+  resultado.innerText = mensaje;
+  seccionResultado.classList.remove("oculto");
+
+  
+  const entrada = {
+    clima,
+    animo,
+    tipo,
+    look: mensaje,
+    fecha: new Date().toLocaleString()
+  };
+
+  let historial = JSON.parse(localStorage.getItem("historialLooks")) || [];
+  historial.unshift(entrada); // Añadir al inicio
+  localStorage.setItem("historialLooks", JSON.stringify(historial));
+
+  mostrarHistorial();
+}
+
+function mostrarHistorial() {
+  const tabla = document.getElementById("tablaHistorial").getElementsByTagName("tbody")[0];
+  tabla.innerHTML = ""; // Limpiar tabla
+
+  const historial = JSON.parse(localStorage.getItem("historialLooks")) || [];
+
+  historial.slice(0, 5).forEach(item => {
+    const fila = document.createElement("tr");
+
+    fila.innerHTML = `
+      <td>${item.fecha}</td>
+      <td>${item.clima}</td>
+      <td>${item.animo}</td>
+      <td>${item.tipo}</td>
+      <td>${item.look}</td>
+    `;
+
+    tabla.appendChild(fila);
+  });
+}
+function mostrarTipDelDia() {
+  const tips = [
+    "Usa brochas limpias para un acabado más natural y saludable.",
+    "Aplica primero una prebase para que tu maquillaje dure más.",
+    "Guarda tus cosméticos en lugares frescos para que no se dañen.",
+    "No olvides desmaquillarte antes de dormir para cuidar tu piel.",
+    "Usa protector solar incluso debajo del maquillaje.",
+    "El rubor en crema da un acabado más natural para el día.",
+    "Cambia tu esponja de maquillaje cada 1-2 meses.",
+    "Combina sombras mate y brillantes para looks con dimensión.",
+    "Hidrata bien tu rostro antes de aplicar base.",
+    "Un delineado sutil puede hacer que tus ojos se vean más grandes."
+  ];
+
+  const randomTip = tips[Math.floor(Math.random() * tips.length)];
+  const tipTexto = document.getElementById("tipTexto");
+
+  if (tipTexto) {
+    tipTexto.innerText = randomTip;
+  }
+}
+
+window.onload = () => {
+  mostrarHistorial();
+  mostrarTipDelDia();
+};
