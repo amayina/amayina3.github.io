@@ -1,0 +1,240 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f1dacb;
+  color: #333;
+}
+
+header {
+  background: #b16c6c;
+  color: white;
+  padding: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.selector, .galeria, .tips, .comentarios {
+  margin: 2rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.selector label, .selector select, .selector button {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+.boton-guia {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #b16c6c;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.boton-guia:hover {
+  background-color: #f0b1b1;
+}
+
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.galeria-looks {
+  margin: 2rem;
+}
+
+.galeria-looks h2 {
+  margin-bottom: 1rem;
+  color: #b16c6c;
+}
+
+.contenedor-galeria {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.contenedor-galeria img {
+  height: 200px;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.contenedor-galeria img:hover {
+  transform: scale(1.05);
+}
+
+
+.selector label,
+.selector select,
+.selector button {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.selector button {
+  background: #b16c6c;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.selector button:hover {
+  background: #7a2222;
+}
+
+.galeria .imagenes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.galeria img {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.resultado {
+  background: #ffebe0;
+}
+
+.oculto {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+s
+footer {
+  background: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.historial table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.historial th, .historial td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.historial th {
+  background-color: #b16c6c;
+  font-weight: bold;
+}
+
+.historial td {
+  background-color: #ffffff;
+}
+
+.tips-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 30vh;
+  width: 250px;
+  background-color: #ffcece;
+  padding: 1rem;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #b16c6c;
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: chart;
+  align-items: center;
+}
+
+.tips-sidebar h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #9e5e5e;
+  text-align: center;
+}
+
+.tips-sidebar p {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+body {
+  margin-right: 100px;
+}
+
+.video-estetico {
+  width: 280%;
+  max-height: 120px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-estetico video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.galeria-looks {
+  margin: 2rem;
+}
+
+.galeria-looks h2 {
+  margin-bottom: 1rem;
+  color: #ff0066;
+}
+
+.contenedor-galeria {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.contenedor-galeria img {
+  height: 200px;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.contenedor-galeria img:hover {
+  transform: scale(1.05);
+}
