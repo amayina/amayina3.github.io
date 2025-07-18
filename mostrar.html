@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>Mostrar</TITLE>
+</HEAD>
+<BODY>
+
+<BODY TEXT="came" color="#b16c6" MARGINHEIGHT=40 TOPMARGIN=40 >
+<CENTER>
+<H1>"POP CHIC"</H1>
+<BR>
+<FONT COLOR="came" SIZE=5><H1> usuario </H1>
+<BR>
+
+<?php
+
+$server = "localhost";
+$usuario = "root";
+$contraseña = "";
+$bd = "popchic";
+
+$conexion = mysqli_connect($server, $usuario, $contraseña, $bd)
+or die ("Error de conexión");
+
+$consulta = mysqli_query($conexion, "SELECT * from usuario")
+or die ("Error al mostrar los datos");
+
+
+echo '<table border="2">';
+echo '<tr>';
+echo '<th name="IDUsuario"> ID DEL USUARIO </th>';
+echo '<th name="Clima"> CLIMA </th>';
+echo '<th name="Animo"> ANIMO </th>';
+echo '<th name="Tipodedia"> TIPO DE DIA </th>';
+
+echo '</tr>';
+
+while ($extraido = mysqli_fetch_array($consulta))
+{
+echo '<tr align="center">';
+echo '<td>', $extraido['IDUsuario'], '</td>';
+echo '<td>', $extraido['Clima'], '</td>';
+echo '<td>', $extraido['Animo'], '</td>';
+echo '<td>', $extraido['Tipodedia'], '</td>';
+echo '</tr>';
+}
+
+
+mysqli_close($conexion);
+echo '</table>';
+
+?>
+
+<BR><BR>
+<FORM ACTION="Untitled-1.html">
+<INPUT TYPE="submit" VALUE="REGRESAR" STYLE="background-color:brown;color:white;">
+</FORM>
+
+</FONT></CENTER></BODY></HTML>
