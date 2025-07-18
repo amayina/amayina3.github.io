@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>Insertar</TITLE>
+</HEAD>
+<BODY>
+
+<BODY TEXT="white" color="beige"  MARGINHEIGHT=40 TOPMARGIN=40 >
+<CENTER>
+<H1>POP CHIC</H1><BR>
+<FONT COLOR="came" SIZE=5><H1> usuario </H1><BR>
+
+<?php
+
+$server = "localhost";
+$usuario = "root";
+$contraseña = "";
+$bd = "popchic";
+$conexion = mysqli_connect($server, $usuario, $contraseña, $bd)
+or die ("Error de conexión");
+
+$IDUsuario= $_POST['IDUsuario'];
+$Clima = $_POST['Clima'];
+$Animo = $_POST['Animo'];
+$Tipodedia = $_POST['Tipodedia'];
+
+$insertar = "INSERT into usuario values ('$IDUsuario','$Clima','$Animo', '$Tipodedia')";
+
+$resultado = mysqli_query ($conexion, $insertar)
+or die ("Error al insertar el registro");
+
+mysqli_close($conexion);
+
+echo "___________________________________<br><br>";
+echo "Datos insertados correctamente <br><br>";
+echo "___________________________________<br><br>";
+
+?>
+<FORM ACTION="Untitled-1.html">
+<INPUT TYPE="submit" VALUE="REGRESAR" STYLE="background-color:green;color:white;">
+</FORM>
+
+</FONT></CENTER></BODY></HTML>
